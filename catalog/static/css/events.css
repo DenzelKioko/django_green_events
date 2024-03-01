@@ -1,0 +1,45 @@
+/* events.css */
+
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin-top: 20px;
+    max-height: 370px;
+    overflow-y: auto; /* Add scrollbar if content overflows vertically */
+}
+
+.event {
+    width: 300px;
+    padding: 20px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+    font-size: 14px;
+    overflow: hidden; /* Hide overflowing content */
+}
+
+.event img {
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+.event p {
+    margin: 5px 0;
+    font-size: small;
+}
+
+.event-links {
+    margin-top: 10px;
+    text-decoration: none;
+    list-style: none;
+    color: yellow;
+}
+
+body {
+    background-color: antiquewhite;
+}
+

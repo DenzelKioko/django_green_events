@@ -1,0 +1,48 @@
+/* Style for the main event container */
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+/* Style for each individual event */
+.event {
+    width: calc(33.33% - 20px);
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+}
+
+/* Style for the event title */
+.event h2 {
+    margin-top: 0;
+}
+
+/* Style for event images */
+.event img {
+    width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+/* Style for event details */
+.event p {
+    margin: 5px 0;
+}
+
+/* Media query for responsiveness */
+@media screen and (max-width: 768px) {
+    .event {
+        width: calc(50% - 20px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .event {
+        width: calc(100% - 20px);
+    }
+}
+

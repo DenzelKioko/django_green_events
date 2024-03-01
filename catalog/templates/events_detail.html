@@ -1,0 +1,15 @@
+{% extends base_generic.html %}
+{% block sidebar %}
+    {{ block.super }}
+
+    {% if perms.catalog.change_event or perms.catalog.delete_event %}
+
+    <ul class="sidebar-nav">
+        <li><a href="{% url 'event_update' event.id %}">Update event</a></li>
+        <li><a href="{% url 'event_delete' event.id %}">Delete event</a></li>
+        
+    
+    </ul>
+    {% endif %}
+
+{% endblock %}

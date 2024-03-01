@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Categories</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <h1>Categories</h1>
+
+    <!-- Category filter dropdown menu -->
+    <form action="{% url 'categories' %}" method="GET">
+        <label for="category-filter">Filter by Category:</label>
+        <select name="category" id="category-filter">
+            <option value="">All Categories</option>
+            {% for category in categories %}
+                <option value="{{ category.id }}">{{ category.name }}</option>
+            {% endfor %}
+        </select>
+        <button type="submit">Apply Filter</button>
+    </form>
+
+    <!-- Display events based on selected category -->
+    <div class="category-events">
+        {% if selected_category %}
+            <h2>Events in {{ selected_category.name }}</h2>
+        {% endif %}
+        {% for event in events %}
+            <div class="event">
+                <h3>{{ event.title }}</h3>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+                <p><strong>Time:</strong> {{ event.time }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <!-- Add more event details as needed -->
+            </div>
+        {% empty %}
+            <p>No events available.</p>
+        {% endfor %}
+    </div>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!-- organiser_list.html -->
+
+{% extends 'base_generic.html' %}
+
+{% block title %}
+    Organisers - My Django App
+{% endblock %}
+
+{% block content %}
+    <h1>List of Organisers</h1>
+    <ul>
+        {% for organiser in organisers %}
+            <li>
+                <h2>{{ organiser.org_name }}</h2>
+                {% if organiser.org_description %}
+                    <p>Description: {{ organiser.org_description }}</p>
+                {% endif %}
+                {% if organiser.org_contact_email %}
+                    <p>Contact Email: <a href="mailto:{{ organiser.org_contact_email }}">{{ organiser.org_contact_email }}</a></p>
+                {% endif %}
+                {% if organiser.org_website %}
+                    <p>Website: <a href="{{ organiser.org_website }}" target="_blank">{{ organiser.org_website }}</a></p>
+                {% endif %}
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}

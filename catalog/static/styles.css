@@ -1,0 +1,64 @@
+/* Global styles */
+body {
+    background-color: green;
+    font-family: Arial, sans-serif;
+    color: #333;
+    padding-bottom: 80px;
+    background-image: url('{% static "School girl.jpeg" %}');
+    background-size: cover; 
+    background-repeat: no-repeat;
+}
+
+.container-fluid {
+    padding-top: 20px;
+}
+
+/* Sidebar styles */
+.col-sm-2 {
+    background-color: #ffffff;
+    padding: 10px;
+    border-right: 1px solid #ddd;
+}
+
+.sidebar-nav {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.sidebar-nav li {
+    margin: 10px;
+}
+
+.sidebar-nav a {
+    text-decoration: none;
+    color: #5e2d05;
+}
+
+.sidebar-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Content styles */
+.col-sm-10 {
+    padding: 20px;
+}
+
+.content-heading {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+/* Footer styles */
+footer {
+    background-color: rgb(91, 55, 8);
+    color: rgb(208, 200, 199);
+    padding: 10px;
+    text-align: center;
+    margin-bottom: 0px;
+    position: fixed; 
+    bottom: 0;
+    width:100%;
+    left: 0;
+}

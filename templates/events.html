@@ -1,0 +1,41 @@
+{% extends "base_generic.html" %}
+{% load static %}
+
+{% block title %}
+    <title>Events</title>
+{% endblock %}
+
+{% block content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'css/events.css' %}">
+
+    <h1>Events</h1>
+    <div class="event-container">
+        {% for event in events %}
+
+            <div class="event">
+                <p><strong>{{ event.title }}</strong> </p>
+                <p><strong>Date:</strong> {{ event.date }}</p>
+                <p><strong>Time:</strong> {{ event.time }}</p>
+                <p><strong>Location:</strong> {{ event.location }}</p>
+                <p><strong>Description:</strong> {{ event.description }}</p>
+                <p><strong>Category:</strong>  {{ event.category }}</p>
+                <p><strong>Organiser:</strong> {{ event.organiser }}</p>
+            
+                <div class="event-links">
+                    {% if user.is_authenticated %}
+                        <a href="{% url 'register_event' event.id %}">Register</a>
+                    {% endif %}
+                    {% if perms.catalog.change_event %}
+                        <a href="{% url 'event_update' event.id %}">Update</a>
+                    {% endif %}
+                    {% if perms.catalog.delete_event %}
+                        <a href="{% url 'event_delete' event.id %}">Delete</a>
+                    {% endif %}
+                    
+                </div>
+            </div>
+        {% empty %}
+            <p>No events available</p>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,18 @@
+<!-- event_detail.html -->
+
+{% extends "base_generic.html" %}
+
+{% block title %}
+    <title>{{ event.title }} Details</title>
+{% endblock %}
+
+{% block content %}
+    <h1>{{ event.title }} Details</h1>
+    <img src="{{ event.image.url }}" alt="{{ event.title }}">
+    <p><strong>Date:</strong> {{ event.date }}</p>
+    <p><strong>Time:</strong> {{ event.time }}</p>
+    <p><strong>Location:</strong> {{ event.location }}</p>
+    <p><strong>Description:</strong> {{ event.description }}</p>
+    <p><strong>Category:</strong> {{ event.category }}</p>
+    <p><strong>Organiser:</strong> {{ event.organiser }}</p>
+{% endblock %}

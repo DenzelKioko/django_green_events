@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+    Logout - My Django App
+{% endblock %}
+
+{% block content %}
+    <h2>Logout</h2>
+    <p>Are you sure you want to logout?</p>
+    <form action="{% url 'logout' %}" method="post">
+        {% csrf_token %}
+        <input type="hidden" name="next" value="{% url 'index' %}">
+        <button type="submit">Logout</button>
+    </form>
+{% endblock %}

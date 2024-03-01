@@ -1,0 +1,112 @@
+{% extends "base_generic.html" %}
+
+
+{% block content %}
+
+{% load static %}
+
+<style>
+/* Global Styles */
+
+.landing-page {
+    position: relative;
+    background-image: url("{% static 'images/homepage2.jpg' %}");
+    background-size: cover; /* Cover the entire container with the background image */
+    height: 100vh; /* Set the height to viewport height for full screen */
+    background-color: #ccc;
+}
+
+.overlay-text {
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -60%);
+   
+    color: rgb(114, 186, 125); /* Text color */
+    font-size: 40%; /* Text font size */
+    text-align: center; /* Center text horizontally */
+    font-family: "Berlin Sans FB";
+
+
+
+}
+
+body {
+    background-color: rgb(252, 252, 252);
+    justify-content: center;
+    align-items: center;
+    margin: 0px;
+    padding: 60px;
+}
+
+.shorten paragraph {
+    width: 400px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+
+
+
+
+
+
+</style>
+
+
+
+
+<body>
+    
+    
+
+    <div class="row mt-4">
+        <div class="col-sm-6">
+            <div class="container border p-4">
+                <h2>Mision</h2>
+                <p>Our vision is to become the go-to platform for discovering, promoting, and participating in local charity and green events worldwide.</p>
+            </div>
+        </div>
+       
+    </div>
+
+    <div class="row mt-4">
+        <div class="col-sm-12">
+            <div class="container border p-4">
+                <h2>About</h2>
+                <p class="shorten-paragraph">Welcome to Local Events, your ultimate destination for discovering exciting events in your community. Whether you're looking for cultural festivals, music concerts, sports events, or educational workshops, we've got you covered. Our platform is designed to make event discovery easy and convenient, allowing you to explore and engage with a diverse range of activities happening near you. Join us in celebrating local culture, supporting local businesses, and connecting with fellow community members. Let's make every day an adventure!</p>
+            </div>
+        </div>
+    </div>
+
+    <style>
+        .grid-container {
+            display: block;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 50px;
+        }
+        .grid-item {
+            padding: 10px;
+            border: 0px solid #fff;
+        }
+    </style>
+    
+    <div class="grid-container">
+        <h3>Donations can be chanelled through:</h3>
+        <div class="grid-item"><strong>ACCOUNT NAME:</strong> MORE LIFE CHARITY FUND</div>
+        <div class="grid-item"><strong>ACCOUNT NUMBER:</strong> 1936667890</div>
+        <div class="grid-item"><strong>BANK NAME:</strong> NCBA</div>
+        <div class="grid-item"><strong>SWIFT CODE:</strong> CBAFKNWOMA</div>
+        <div class="grid-item"><strong>BANK CODE:</strong> 7</div>
+        <div class="grid-item"><strong>BRANCH CODE:</strong> 102</div>
+        <div class="grid-item"><strong>BRANCH NAME:</strong> NCBA HOUSE</div>
+        <div class="grid-item"><strong>MPESA PAYBILL NUMBER:</strong> 3308924</div>
+        <div class="grid-item"><strong>ACCOUNT NAME:</strong> YOUR NAME</div>
+    </div>
+    
+</body>
+
+
+{% endblock %}

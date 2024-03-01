@@ -1,0 +1,16 @@
+{% for event in events %}
+    <div class="event">
+        {% if event.image %}
+            <img src="{{ event.image.url }}" alt="{{ event.title }}" class="events">
+        {% endif %}
+        <h2><a href="{% url 'event_detail' event.pk %}">{{ event.title }}</a></h2>
+        <p><strong>Date:</strong> {{ event.date }}</p>
+        <p><strong>Time:</strong> {{ event.time }}</p>
+        <p><strong>Location:</strong> {{ event.location }}</p>
+        <p><strong>Description:</strong> {{ event.description }}</p>
+        <p><strong>Category:</strong> {{ event.category }}</p>
+        <p><strong>Organiser:</strong> <a href="{% url 'organiser_events' event.organiser.pk %}">{{ event.organiser }}</a></p>
+    </div>
+{% empty %}
+    <p>No events available</p>
+{% endfor %}
